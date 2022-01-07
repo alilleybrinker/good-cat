@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# This cat hates pipes.
+
+# Exit with an error if output is piped
+[ -t 1] || exit 1
+
+# Exit with an error if 'cat' doesn't exist
+command -v cat >/dev/null 2>&1 || exit 1
+
+# Otherwise, run 'cat'
+cat $@
